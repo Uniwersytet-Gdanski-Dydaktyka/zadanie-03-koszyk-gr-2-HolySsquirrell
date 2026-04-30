@@ -1,6 +1,7 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import com.example.promotions.Promotion;
@@ -30,5 +31,18 @@ public class ShoppingCart {
         return products.stream()
                 .mapToDouble(Product::getDiscountPrice)
                 .sum();
+    }
+
+    public static Product getCheapest(List<Product> products) {
+        return products.stream()
+                .min(Comparator.comparing(Product::getPrice))
+                .orElse(null);
+    }
+
+    public static List<Product> getNCheapest(List<Product> products, int n) {
+        return products.stream()
+                .sorted(Comparator.comparing(Product::getPrice))
+                .limit(n)
+                .toList();
     }
 }

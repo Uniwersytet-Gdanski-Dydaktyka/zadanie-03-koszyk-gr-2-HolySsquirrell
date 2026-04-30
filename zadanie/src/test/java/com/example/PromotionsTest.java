@@ -1,8 +1,11 @@
 package com.example;
 
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import com.example.promotions.Buy2Get1Promotion;
+import com.example.promotions.CouponPromotion;
+import com.example.promotions.TotalDiscountPromotion;
 
 public class PromotionsTest {
     

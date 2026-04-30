@@ -6,4 +6,5 @@ import com.example.Product;
 
 public interface Promotion {
     void apply(List<Product> products);
-};
+}
+

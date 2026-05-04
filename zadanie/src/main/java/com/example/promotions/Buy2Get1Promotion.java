@@ -8,9 +8,15 @@ public class Buy2Get1Promotion implements Promotion {
     
     @Override
     public void apply(List<Product> products) {
-        if (products.size() < 3) return;
 
-        Product cheapest = products.stream()
+        List<Product> eligible = products.stream()
+                .filter(p -> p.getDiscountPrice() > 0)
+                .toList();
+
+
+        if (eligible.size() < 3) return;
+
+        Product cheapest = eligible.stream()
                 .min(Comparator.comparing(Product::getDiscountPrice))
                 .orElse(null);
 

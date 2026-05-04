@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.example.PromotionsTest" time="0.07" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.example.ShoppingCartUtilsTest" time="0.07" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="PL"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\Marcel\AppData\Local\Temp\surefire16381277458674486110\surefirebooter-20260504103303138_3.jar C:\Users\Marcel\AppData\Local\Temp\surefire16381277458674486110 2026-05-04T10-33-02_987-jvmRun1 surefire-20260504103303138_1tmp surefire_0-20260504103303138_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Marcel\AppData\Local\Temp\surefire15997959356773093162\surefirebooter-20260504103319217_3.jar C:\Users\Marcel\AppData\Local\Temp\surefire15997959356773093162 2026-05-04T10-33-19_074-jvmRun1 surefire-20260504103319217_1tmp surefire_0-20260504103319217_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.example.PromotionsTest"/>
+    <property name="test" value="com.example.ShoppingCartUtilsTest"/>
     <property name="surefire.test.class.path" value="C:\Users\Marcel\Desktop\Studia\jav1\zadanie-03-koszyk-gr-2-HolySsquirrell\zadanie\target\test-classes;C:\Users\Marcel\Desktop\Studia\jav1\zadanie-03-koszyk-gr-2-HolySsquirrell\zadanie\target\classes;C:\Users\Marcel\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\Marcel\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Marcel\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\Marcel\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Marcel\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Marcel"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Marcel\AppData\Local\Temp\surefire16381277458674486110\surefirebooter-20260504103303138_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Marcel\AppData\Local\Temp\surefire15997959356773093162\surefirebooter-20260504103319217_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.2+10-LTS-69"/>
@@ -61,10 +61,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="shouldApply5PercentDiscountOver300" classname="com.example.PromotionsTest" time="0.029"/>
-  <testcase name="shouldHandlePromotionOnEmptyCart" classname="com.example.PromotionsTest" time="0.001"/>
-  <testcase name="shouldNotApplyDiscountBelow300" classname="com.example.PromotionsTest" time="0.002"/>
-  <testcase name="shouldApplyCouponToSpecificProduct" classname="com.example.PromotionsTest" time="0.002"/>
-  <testcase name="shouldAddFreeMugWhenTotalExceeds200" classname="com.example.PromotionsTest" time="0.002"/>
-  <testcase name="shouldApplyBuy2Get1Free" classname="com.example.PromotionsTest" time="0.003"/>
+  <testcase name="shouldHandleNGreaterThanSize" classname="com.example.ShoppingCartUtilsTest" time="0.03"/>
+  <testcase name="shouldFindCheapestProduct" classname="com.example.ShoppingCartUtilsTest" time="0.004"/>
+  <testcase name="shouldReturnEmptyListForEmptyInput" classname="com.example.ShoppingCartUtilsTest" time="0.002"/>
+  <testcase name="shouldReturnNCheapestProducts" classname="com.example.ShoppingCartUtilsTest" time="0.001"/>
+  <testcase name="shouldReturnNullForEmptyList" classname="com.example.ShoppingCartUtilsTest" time="0.001"/>
 </testsuite>

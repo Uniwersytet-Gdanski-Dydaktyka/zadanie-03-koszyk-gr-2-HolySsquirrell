@@ -1,10 +1,15 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import com.example.promotions.Buy2Get1Promotion;
 import com.example.promotions.CouponPromotion;
+import com.example.promotions.FreeMugPromotion;
 import com.example.promotions.TotalDiscountPromotion;
 
 public class PromotionsTest {
@@ -74,6 +79,22 @@ public class PromotionsTest {
         double total = cart.getTotalPrice();
 
         assertEquals(800, total, 0.01); // 700 + 100
+    }
+
+    @Test
+    void shouldAddFreeMugWhenTotalExceeds200() {
+        List<Product> products = new ArrayList<>();
+
+        products.add(new Product("1", "Laptop", 150));
+        products.add(new Product("2", "Mouse", 100));
+
+        FreeMugPromotion promo = new FreeMugPromotion();
+        promo.apply(products);
+
+        boolean mugExists = products.stream()
+                .anyMatch(p -> p.getName().equals("Mug"));
+
+        assertTrue(mugExists);
     }
     
 }

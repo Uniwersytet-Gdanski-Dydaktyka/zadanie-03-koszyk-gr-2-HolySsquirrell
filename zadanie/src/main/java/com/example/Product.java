@@ -29,4 +29,10 @@ public class Product {
     public void setDiscountPrice(double discountPrice) {
         this.discountPrice = discountPrice;
     }
+    
+    public Product copy() {
+        Product p = new Product(this.code, this.name, this.price);
+        p.setDiscountPrice(this.discountPrice);
+        return p;
+    }
 }

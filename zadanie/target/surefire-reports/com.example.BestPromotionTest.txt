@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.example.PromotionsTest
+Test set: com.example.BestPromotionTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.070 s -- in com.example.PromotionsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s -- in com.example.BestPromotionTest

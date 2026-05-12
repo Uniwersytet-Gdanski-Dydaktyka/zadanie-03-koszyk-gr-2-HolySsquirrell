@@ -14,6 +14,7 @@ public class ShoppingCart {
     public void addProduct(Product product) {
         if (product != null) {
             products.add(product);
+            products = ProductSorter.sortDefault(products);
         }
     }
 
@@ -39,11 +40,18 @@ public class ShoppingCart {
                 .orElse(null);
     }
 
-    public static List<Product> getNCheapest(List<Product> products, int n) {
+    public static Product getMostExpensive(List<Product> products) {
         return products.stream()
-                .sorted(Comparator.comparing(Product::getPrice))
-                .limit(n)
-                .toList();
+                .max(Comparator.comparing(Product::getPrice))
+                .orElse(null);
+    }
+
+    public List<Product> getNMostExpensive(int n) {
+    return ProductSorter.byPriceDesc().topN(products, n);
+    }
+
+    public List<Product> getNCheapest(int n) {
+        return ProductSorter.byPriceAsc().topN(products, n);
     }
 
     public double getBestPrice() {
@@ -59,7 +67,7 @@ public class ShoppingCart {
 
             List<Product> copiedProducts = products.stream()
                     .map(Product::copy)
-                    .collect(java.util.stream.Collectors.toList());;
+                    .collect(java.util.stream.Collectors.toList());
 
             for (Product p : copiedProducts) {
                 p.setDiscountPrice(p.getPrice());

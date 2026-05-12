@@ -33,13 +33,12 @@ public class ShoppingCartUtilsTest {
 
     @Test
     void shouldReturnNCheapestProducts() {
-        List<Product> products = List.of(
-                new Product("1", "A", 100),
-                new Product("2", "B", 50),
-                new Product("3", "C", 200)
-        );
+        ShoppingCart cart = new ShoppingCart();
+        cart.addProduct(new Product("1", "A", 100));
+        cart.addProduct(new Product("2", "B", 50));
+        cart.addProduct(new Product("3", "C", 200));
 
-        List<Product> result = ShoppingCart.getNCheapest(products, 2);
+        List<Product> result = cart.getNCheapest(2);
 
         assertEquals(2, result.size());
         assertEquals("2", result.get(0).getCode());
@@ -48,18 +47,17 @@ public class ShoppingCartUtilsTest {
 
     @Test
     void shouldHandleNGreaterThanSize() {
-        List<Product> products = List.of(
-                new Product("1", "A", 100)
-        );
-
-        List<Product> result = ShoppingCart.getNCheapest(products, 5);
+        ShoppingCart cart = new ShoppingCart();
+        cart.addProduct(new Product("1", "A", 100));
+        List<Product> result = cart.getNCheapest(5);
 
         assertEquals(1, result.size());
     }
 
     @Test
     void shouldReturnEmptyListForEmptyInput() {
-        List<Product> result = ShoppingCart.getNCheapest(List.of(), 3);
+        ShoppingCart cart = new ShoppingCart();
+        List<Product> result = cart.getNCheapest(3);
 
         assertTrue(result.isEmpty());
     }
